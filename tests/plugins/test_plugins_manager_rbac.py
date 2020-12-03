@@ -90,7 +90,7 @@ class TestPluginsRBAC(object):
         mock_dist.entry_points = [mock_entrypoint]
 
         with mock.patch('importlib_metadata.distributions', return_value=[mock_dist]), caplog.at_level(
-            logging.ERROR, logger='airflow.plugins_manager'
+            logging.ERROR
         ):
             load_entrypoint_plugins(entry_points_with_dist('airflow.plugins'), [])
 
